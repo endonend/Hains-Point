@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    {{ if .Site.Params.dark_mode }}
+    <body class="dark">
+    {{ else }}
+    <body>
+    {{ end }}
+        {{ block "main" . }}{{ end }}
+	{{ partial "custom_footer.html" . }}
+    </body>
+</html>
