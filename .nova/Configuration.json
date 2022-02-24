@@ -1,4 +1,7 @@
 {
+  "index.ignored_file_patterns" : [
+    ".nova\/*"
+  ],
   "workspace.art_style" : 0,
   "workspace.name" : "Hains Point"
 }
