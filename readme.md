@@ -14,12 +14,11 @@ Hain's Point for Micro.blog is freely available to members of Micro.blog. Log in
 
  ## Configuration parameters
 
- - Dark mode! Set dark_mode to true in config to turn on. Default: false
- - Social icons! (see example-config.json)
+ - See example-config.json
 
 ## Version History
 
-2022.1.1 - February 23, 2022
+2022.1 - February 23, 2022
 
 - Initialized the repo
 
