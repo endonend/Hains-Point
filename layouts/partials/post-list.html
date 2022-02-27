@@ -1,3 +1,4 @@
+{{ partial "blog-header.html" . }}
 <main class="container">
 	<!-- Display if newsletter enabled -->
 	{{ with .Site.Params.enable_newsletter }}
@@ -55,6 +56,7 @@
 						<p><a href="{{ .RelPermalink }}" class="card-link mt-2">Read More</a></p>
 					{{ end }}
 			{{ end }}
+		</div>
 	<nav class="blog-pagination" aria-label="Pagination">
 		{{ $pag := $.Paginator }}
 		{{ if or $pag.HasPrev $pag.HasNext }}

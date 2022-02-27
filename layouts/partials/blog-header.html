@@ -59,57 +59,31 @@
 
 {{ $categoryList := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 
-<section class="blog-header">
-    <header>
-        <h2><a href="/">Blog</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/">Recent</a></li>
-                {{ if gt (len $categoryList) 0 }}
-                <li><a href="#" class="drop-link" data-nav="categories">Categories</a></li>
-                {{ end }}
-                <li><a href="#" class="drop-link" data-nav="search"><i class="material-icons">search</i></a></a></li>
-                <li><a href="{{ .RSSLink }}"><i class="material-icons">rss_feed</i></a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="blog-controls">
-        <section data-nav-content="categories">
-            {{ if gt (len $categoryList) 0 }}
-                <ul>    
-                    {{ range $categoryList }}
-                        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-                    {{ end }}
-                </ul>
-            {{ end }}
-            <a href="#" class="close-link material-icons">close</a>
-        </section>
-        <section data-nav-content="search" class="blog-search">
-            <form onSubmit="return false;">
-                <input class="form-control" type="search" name="q" id="input_search" placeholder="Search..." onChange="runSearch(this.value.toLowerCase());">
-                <button class="button" type="submit">
-                    <i class="material-icons">arrow_forward</i>
-                </button>
-            </form>
-            <a href="#" class="close-link material-icons">close</a>
-        </section>
-    </div>
-</section>
-<div id="list_results">
+<div class="container">
+      <header class="blog-header py-3">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none py-2 px-10">
+                    
+                    <!-- Blog logo -->
+                      <img src="https://endonend.micro.blog/uploads/2022/37f159d602.png" alt="Logo" height="40" width="200" />
+                    </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul id="main-navigation" class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item"><a href="/">Home</a></li>
+                        {{ range .Site.Menus.main }}
+                            {{ if .Page.Params.redirect_url }}
+                                <li class="nav-item"><a href="{{ .Page.Params.redirect_url }}" class="nav-link">{{ .Name }}</a></li>
+                            {{ else }}
+                                <li class="nav-item"><a href="{{ .URL | relLangURL | safeURL }}" class="nav-link">{{ .Name }}</a></li>
+                            {{ end }}
+                        {{ end }}
+                    </ul>
+              </div>
+            </div>
+          </nav>
+      </header>
 </div>
-
-
-
-
-<nav class="main-nav">
-    <ul id="main-navigation">
-        <li class="menu-item"><a href="/">Home</a></li>
-        {{ range .Site.Menus.main }}
-            {{ if .Page.Params.redirect_url }}
-                <li class="menu-item"><a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
-            {{ else }}
-                <li class="menu-item"><a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a></li>
-            {{ end }}
-        {{ end }}
-    </ul>
-</nav>
