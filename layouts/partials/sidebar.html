@@ -28,7 +28,7 @@
 <!-- Asides section -->
     <div class="p-4" id="asides">
       <h4 class="pb-2 mb-4 border-bottom"><i class="bi-sticky-fill" role="img" aria-label="Quick Posts"></i> Asides</h4>
-      {{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" ".Title" "==" nil }}
+      {{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
       {{ range first 3 ($list)  }}
         <div class="card mb-2" style="width: 100%;">
             <div class="card-body">
