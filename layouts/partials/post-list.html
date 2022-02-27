@@ -1,37 +1,85 @@
-<div class="site-wrapper">
-	{{ partial "sidebar.html" . }}
-	
-	<main>
-		{{ partial "blog-header.html" . }}
-		<section class="h-feed">
+<main class="container">
+	<!-- Display if newsletter enabled -->
+	{{ with .Site.Params.enable_newsletter }}
+	<h3 class="pb-2 mb-4 border-bottom">
+		<i class="bi-bookmark-fill" role="img" aria-label="Latest Issues"></i> Latest Issues
+	</h3>
+	<div class="row mb-2">
+		{{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
+		{{ range first 2 ($list) }}
+			<div class="col-md-6">
+				<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				  	<div class="col p-4 d-flex flex-column position-static">					  
+					  <strong class="d-inline-block mb-1 text-primary">{{ .Site.Params.enable_newsletter }}</strong>
+					  <h3 class="mb-0">{{ .Title }}</h3>
+					  <p class="blog-post-meta mb-2 mt-2 text-muted"><a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a></p>
+				  	  <div class="card-text mb-auto">
+					  		{{ .Summary }}
+					  </div>
+					  {{ if .Truncated }}
+						<p><a href="{{ .RelPermalink }}" class="card-link mt-2">Read More</a></p>
+					  {{ end }}
+					</div>
+				</div>
+			</div>
+		{{ end }}
+<!-- Feature if newsletter enabled -->
+	<div class="p-2 p-md-5 mb-4 text-white rounded bg-dark">
+		<div class="col-md-6 px-0">
+		  <h1 class="display-6 fst-italic"><i class="bi-send" role="img" aria-label="Subscribe"></i> Subscribe to {{ .Site.Params.enable_newsletter }}</h1>
+		  <p class="my-3">{{ .Site.Params.subscribe_blurb }}</p>
+		  <form method="POST" action="https://micro.blog/users/subscribe/61826" class="row g-3">
+			  <div class="col-auto">
+				  <input type="text" name="email" size="30" placeholder="Your email address" class="form-control" /> 
+			  </div>
+			  <div class="col-auto">
+				  <input type="submit" class="btn bg-warning text-dark mb-3" value="Subscribe" />
+			  </div>
+		  </form>
+		  </div>
+  	</div>
+	{{ end }}
+<!-- End of display  if newsletter enabled -->
+  <!-- Start of main blog posts with title - five -->
+	<div class="row g-2" id="blogposts">
+		<div class="col-md-8">
+			<h3 class="pb-2 mb-4 border-bottom"><i class="bi-journal-text" role="img" aria-label="Recent Posts"></i> From the Blog</h3>
 			
 			{{ if .Site.Params.paginate_home }}
-				{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
+				{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post" ".Title" "!=" nil ) 5 }}
 				{{ range $paginator.Pages }}
-					{{ partial "post-item.html" . }}
-				{{ end }}
-
-				<div class="pagination">
-					{{ $pag := $.Paginator }}
-					{{ if or $pag.HasPrev $pag.HasNext }}
-						{{ if $pag.HasPrev }}
-							<a href="{{ $pag.Prev.URL }}">&larr; Newer Posts</a>
-						{{ end }}
-						<span class="page-number">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
-						{{ if $pag.HasNext }}
-							<a href="{{ $pag.Next.URL }}">Older Posts &rarr;</a>
-						{{ end }}
+					
+					{{ .Summary }}
+					  
+					{{ if .Truncated }}
+						<p><a href="{{ .RelPermalink }}" class="card-link mt-2">Read More</a></p>
 					{{ end }}
-				</div>
-			{{ else }}
-				{{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
-				{{ range $list  }}
-					{{ partial "post-item.html" . }}
+			{{ end }}
+	<nav class="blog-pagination" aria-label="Pagination">
+		{{ $pag := $.Paginator }}
+		{{ if or $pag.HasPrev $pag.HasNext }}
+			{{ if $pag.HasPrev }}
+				<a href="{{ $pag.Prev.URL }}" class="btn btn-outline-primary">&larr; Newer Posts</a>
+				{{ end }}
+		<span class="page-number">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
+			{{ if $pag.HasNext }}
+				<a href="{{ $pag.Next.URL }}" class="btn btn-outline-primary">Older Posts &rarr;</a>
+			{{ end }}
+		{{ end }}
+	</nav>
+	{{ else }}
+		{{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
+			{{ range $list }}								
+				{{ .Summary }}
+				  
+				{{ if .Truncated }}
+					<p><a href="{{ .RelPermalink }}" class="card-link mt-2">Read More</a></p>
 				{{ end }}
 			{{ end }}
+	{{ end }}
+	</div>
+	{{ partial "sidebar.html" . }}
 
-			
-		</section>
-		{{ partial "footer.html" . }}
-	</main>
-</div>
+	</div>
+</main>
+{{ partial "footer.html" . }}

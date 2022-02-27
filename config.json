@@ -3,6 +3,16 @@
 		"paginate_home": true,
 		"paginate_categories": true,
 		"paginate_replies": false,
-		"dark_mode": false
+		"flickr_username": "endonend",
+		"github_username": "endonend",
+		"twitter_username": "endonend",
+		"meta_desc": "Meta description here",
+		"enable_newsletter": true,
+		"newsletter_name": "One Last Wish",
+		"subscribe_blurb": "One Last Wish is a modern day zine — an email newsletter. It's a musical love letter to my past, present, and future self.",
+		"feature_category": "One Last Wish",
+		"logo_url": "https://endonend.micro.blog/uploads/2022/37f159d602.png",
+		"about_blurb": "One Last Wish is a modern day zine — an email newsletter. It’s a musical love letter to my past, present, and future self. Back in the 90s I was into making zines about the hardcore music scene. Today, email newsletters are filling that void. I’d love to do all that again, so here we are…",
+		"about_more_url": "/about"
 	}
 }

@@ -1,15 +1,6 @@
-<article class="h-entry">
-    <div class="meta">
-        <h5>
-            <a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a>
-        </h5>
-    </div>
-    <div class="content">
-        {{ if .Title }}
-            <h2><a href="{{ .Permalink }}" class="p-name u-url">{{ .Title }}</a></h2>
-        {{ end }}
-        <div class="e-content">
-            {{ .Content }}
-        </div>
-    </div>
+<article class="blog-post">
+    <h2 class="blog-post-title">{{ .Title }}</h2>
+    <p class="blog-post-meta mb-4 mt-2 text-muted"><a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a></p>
+
+    {{ .Content }}
 </article>

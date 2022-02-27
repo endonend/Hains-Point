@@ -1,8 +1,9 @@
+
 <meta content="{{ .Site.Author.name }}" name="author">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="microblog-theme" content="Cypress 2022.1.1">
-<meta name="designer" content="Kyle Ruane and Colin Devroe">
+<meta name="microblog-theme" content="Hain's Point 2022.1">
+<meta name="designer" content="Jason Dettbarn">
 
 <title>
     {{- block "title" . -}}
@@ -12,15 +13,25 @@
     {{- end -}}
     {{- end -}}
 </title>
+{{ with .Site.Params.meta_desc }}
+<meta name="description" content="">
+{{ end }}
 
-<link href="{{ "assets/css/style.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+<!-- Custom styles for this template -->
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&amp;display=swap" rel="stylesheet">
+<link href="https://getbootstrap.com/docs/5.1/examples/blog/blog.css" rel="stylesheet">
+
 <link href="{{ "assets/css/microblog.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
 <link rel="stylesheet" href="{{ "custom.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
 
-<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic" rel="stylesheet">
-<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 <link rel="shortcut icon" href="https://micro.blog/{{ .Site.Author.username }}/favicon.png" type="image/x-icon" />
+
+<script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 {{ if .RSSLink -}}
     <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
@@ -39,12 +50,14 @@
 {{ with .Site.Params.instagram_username }}
     <link rel="me" href="https://instagram.com/{{ . }}" />
 {{ end }}
+
 <link rel="authorization_endpoint" href="https://micro.blog/indieauth/auth" />
 <link rel="token_endpoint" href="https://micro.blog/indieauth/token" />
 <link rel="micropub" href="https://micro.blog/micropub" />
 <link rel="microsub" href="https://micro.blog/microsub" />
 <link rel="webmention" href="https://micro.blog/webmention" />
 <link rel="subscribe" href="https://micro.blog/users/follow" />
+
 {{ range .Site.Params.plugins_css }}
     <link rel="stylesheet" href="{{ . }}" />
 {{ end }}

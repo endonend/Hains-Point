@@ -1,77 +1,48 @@
-<aside class="clear">
-    <header>
-        <h1 class="logo">
-            <a href="/">
-                <div><img src="{{ .Site.Author.avatar }}" /></div>
-            </a>
-            <div class="text">{{ .Site.Title }}</div>
-        </h1>
-        <div class="info collapse" id="info">
-            <div class="subtitle">
-                <p>{{ .Site.Params.description | safeHTML }}</p>
-            </div>
-            <nav class="main-nav">
-                <ul id="main-navigation">
-                    <li class="menu-item"><a href="/">Home</a></li>
-                    {{ range .Site.Menus.main }}
-                        {{ if .Page.Params.redirect_url }}
-                            <li class="menu-item"><a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
-                        {{ else }}
-                            <li class="menu-item"><a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a></li>
-                        {{ end }}
-                    {{ end }}
-                </ul>
-            </nav>
-            <div class="social">
-                <p>
-                    {{ with .Site.Params.facebook_username }}
-                        <a href="https://facebook.com/{{ . }}"><i class="fab fa-facebook"></i></a>
-                    {{ end }}
-                    {{ with .Site.Params.flickr_username }}
-                        <a href="https://flickr.com/photos/{{ . }}"><i class="fab fa-flickr"></i></a>
-                    {{ end }}
-                    {{ with .Site.Params.github_username }}
-                        <a href="https://github.com/{{ . }}"><i class="fab fa-github"></i></a>
-                    {{ end }}
-                    {{ with .Site.Params.linkedin_username }}
-                        <a href="https://linkedin.com/{{ . }}"><i class="fab fa-linkedin"></i></a>
-                    {{ end }}
-                    {{ with .Site.Params.instagram_username }}
-                        <a href="https://instagram.com/{{ . }}"><i class="fab fa-instagram"></i></a>
-                    {{ end }}
-                    {{ with .Site.Params.mastodon_url }}
-                        <a href="{{ . }}"><i class="fab fa-mastodon"></i></a>
-                    {{ end }}
-                    {{ with .Site.Author.username }} <!-- Micro.blog is the author's username -->
-                        <a href="https://micro.blog/{{ . }}"><i class="fab fa-microblog"></i></a>
-                    {{ end }}
-                    {{ with .Site.Params.tiktok_username }}
-                        <a href="https://tiktok.com/@{{ . }}"><i class="fab fa-tiktok"></i></a>
-                    {{ end }}
-                    {{ with .Site.Params.twitter_username }}
-                        <a href="https://twitter.com/{{ . }}"><i class="fab fa-twitter"></i></a>
-                    {{ end }}
-                    {{ with .Site.Params.youtube_channel }}
-                        <a href="https://youtube.com/channel/{{ . }}"><i class="fab fa-youtube"></i></a>
-                    {{ end }}
-                </p>
+<!-- Sidebar -->
+<div class="col-md-4">
+  <div class="position-sticky" style="top: 3rem;">
+    <div class="p-4 mb-3 bg-warning bg-gradient rounded">
+      {{ with .Site.Params.about_blurb }}
+      <h4><i class="bi-megaphone-fill" role="img" aria-label="About this Site"></i> About</h4>
+      <p class="mb-1">{{ . }}</p>
+      {{ end }}
+      {{ with .Site.Params.about_more_url }}
+      <p><a href="{{ . }}">Learn More</a></p>
+      {{ end }}
+      {{ with .Site.Params.enable_newsletter }} 
+      <h5 class="fst-italic">Subscribe to the newsletter</h5>
+      <form method="POST" action="https://micro.blog/users/subscribe/61826" class="row g-3">
+            <input type="text" class="form-control" name="email" size="30" placeholder="Your email address" /> 
+            <input type="submit" class="btn btn-dark" value="Subscribe" />
+      </form>
+      {{ end }}
+      <p class="pt-2"><strong>Elsewhere:</strong> <a href="{{ .RSSLink }}"><i class="bi-rss-fill" role="img" aria-label="RSS"></i> RSS</a>,
+      {{ with .Site.Params.twitter_username }} 
+      <a href="https://twitter.com/{{ . }}"><i class="bi-twitter" role="img" aria-label="Twitter"></i> Twitter</a>,
+      {{ end }} 
+      {{ with .Site.Params.instagram_username }}
+      <a href="https://instagram.com/{{ . }}"><i class="bi-instagram" role="img" aria-label="Instagram"></i> Instagram</a>  
+      {{ end }}
+      </p>	        
+    </div>
+<!-- Asides section -->
+    <div class="p-4" id="asides">
+      <h4 class="pb-2 mb-4 border-bottom"><i class="bi-sticky-fill" role="img" aria-label="Quick Posts"></i> Asides</h4>
+      {{ $list := where .Data.Pages.ByDate.Reverse (union "Type" "post" ".Title" "==" nil) }}
+      {{ range first 3 ($list)  }}
+        <div class="card mb-2" style="width: 100%;">
+            <div class="card-body">
+                {{ .Content }}
+                <p class="card-subtitle mb-2 text-muted"><a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a></p>
             </div>
         </div>
-        <!-- Mobile Menu is "cloned" from main menu -->
-        <div class="mobile-menu">
-            <span class="mobile-logo">
-
-            </span>
-        </div>
-        <!-- Hamburger -->
-        <a href="#" class="nav-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </a>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#info">
-            <i class="material-icons">info_outline</i>
-        </button>
-    </header>
-</aside>
+      {{ end }}
+      <div class="mb-4 pl-2">
+          <p><a href="#">More Asides</a></p>
+          {{ with .Site.Author.username }} <!-- Micro.blog is the author's username -->
+          <p><a href="https://micro.blog/{{ . }}">Follow me on Micro.blog</a></p>
+          {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

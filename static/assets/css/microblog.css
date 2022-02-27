@@ -1,33 +1,34 @@
-/*  Micro.blog specific styles */
-
-/*
-    Loads search results in a full-width pane on mobile
-*/
-@media all and (min-width:900px) {
-    #list_results { margin-left: 350px; }
+.body {
+    font-family: Arial, Helvetica, sans-serif;
 }
-
-#list_results p {
-    margin-bottom: 10px;
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
-
-#list_results p a {
-    text-decoration: underline;
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
 }
-
-.dark header .main-nav ul li a { color: #fff; }
-
-/*
-    Adds some margin to images in blog posts
-*/
-.h-entry .e-content p img {
-    margin-bottom: 0px;
+  main.container {
+      margin-top: 4rem;
+  }
+  article {
+      margin-right: 20px;
+  }
+  @media (max-width: 768px) {
+      article {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
 }
-
-/* 
-    Load profile image at "half size"
-*/
-.logo img {
-    width: 100px;
-    height: 100px;
+#asides .card-body img {
+    max-width: 100%;
+    height: auto;
+}
+#blogposts h3 {
+    margin-right: 20px;
 }
