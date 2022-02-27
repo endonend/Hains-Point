@@ -6,8 +6,7 @@
 		<i class="bi-bookmark-fill" role="img" aria-label="Latest Issues"></i> Latest Issues
 	</h3>
 	<div class="row mb-2">
-		{{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
-		{{ range first 2 ($list) }}
+		{{ range first 2 (where .Site.Pages "Type" "in" site.Params.feature_category) }}
 			<div class="col-md-6">
 				<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 				  	<div class="col p-4 d-flex flex-column position-static">					  
@@ -27,7 +26,7 @@
 <!-- Feature if newsletter enabled -->
 	<div class="p-2 p-md-5 mb-4 text-white rounded bg-dark">
 		<div class="col-md-6 px-0">
-		  <h1 class="display-6 fst-italic"><i class="bi-send" role="img" aria-label="Subscribe"></i> Subscribe to {{ .Site.Params.enable_newsletter }}</h1>
+		  <h1 class="display-6 fst-italic"><i class="bi-send" role="img" aria-label="Subscribe"></i> Subscribe to {{ .Site.Params.newsletter_name }}</h1>
 		  <p class="my-3">{{ .Site.Params.subscribe_blurb }}</p>
 		  <form method="POST" action="https://micro.blog/users/subscribe/61826" class="row g-3">
 			  <div class="col-auto">
@@ -47,7 +46,7 @@
 			<h3 class="pb-2 mb-4 border-bottom"><i class="bi-journal-text" role="img" aria-label="Recent Posts"></i> From the Blog</h3>
 			
 			{{ if .Site.Params.paginate_home }}
-				{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post" ".Title" "!=" nil ) 5 }}
+				{{ $paginator := .Paginate (where .Site.Pages "Type" "post") 5 }}
 				{{ range $paginator.Pages }}
 					
 					{{ .Summary }}
@@ -70,7 +69,7 @@
 		{{ end }}
 	</nav>
 	{{ else }}
-		{{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
+		{{ $list := where .Site.Pages "Type" "post" }}
 			{{ range $list }}								
 				{{ .Summary }}
 				  
