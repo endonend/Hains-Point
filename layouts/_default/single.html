@@ -1,20 +1,19 @@
 {{ define "main" }}
-<div class="site-wrapper">
-	{{ partial "sidebar.html" . }}
-	<main class="page-layout">
-		<section>
-			<article>
-				<div class="content">
-					<h2>{{ .Title }}</h2>
-					<div>
-						{{ .Content }}
-					</div>
-				</div>
+<main class="container">
+	<div class="row g-2" id="blogposts">
+		<div class="col-md-8">
+			<article class="blog-post">
+				<h2 class="blog-post-title">{{ .Title }}</h2>
+				<p class="blog-post-meta mb-4 mt-2 text-muted"><a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a></p>
+			
+				{{ .Content }}
 			</article>
-		</section>
-		{{ partial "footer.html" . }}
-	</main>
-</div>
+		</div>
+	</div>
+	{{ partial "sidebar.html" . }}
+
+	</div>
+</main>
+{{ partial "footer.html" . }}
+
 {{ end }}
-
-
