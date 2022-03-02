@@ -52,5 +52,9 @@ If you use the theme (and like it) you can [donate to support its development](h
 
 - Initial release
 
+2022.1.1 - March 1, 2022
+
+- Quick Fix - changed Flickr to Twitter, poor copy + paste!
+
 
 Base theme files forked from [Cypress for Micro.blog](https://github.com/cdevroe/cypress-microblog) by Colin Devroe -- to learn Hugo templating. 
