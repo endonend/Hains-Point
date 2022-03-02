@@ -1,5 +1,61 @@
 {
-	"version": "2022.1.1",
+	"version": "2022.1",
 	"title": "Hain's Point theme",
-	"description": "Changes your Micro.blog powered site to use the Hain's Point theme."
+	"description": "Changes your Micro.blog powered site to use the Hain's Point theme.",
+	"fields": [
+	{
+	  "field": "params.twitter_username",
+	  "label": "Flickr Username",
+	  "placeholder": "endonend",
+	  "type": "string"
+	},
+	{
+	  "field": "params.instagram_username",
+	  "label": "Instagram Username",
+	  "placeholder": "endonend",
+	  "type": "string"
+	},
+	{
+	  "field": "params.meta_desc",
+	  "label": "Set sitewide meta description",
+	  "placeholder": "Your text goes here",
+	  "type": "string"
+	},
+	{
+	  "field": "params.newsletter_name",
+	  "label": "Newsletter name",
+	  "placeholder": "One Last Wish",
+	  "type": "string"
+	},
+	{
+	  "field": "params.newsletter_id",
+	  "label": "Newsletter subscribe form action ID (found on Subscribe page)",
+	  "placeholder": "61826",
+	  "type": "string"
+	},
+	{
+	  "field": "params.subscribe_blurb",
+	  "label": "Subscribe blurb for wide box",
+	  "placeholder": "One Last Wish is a modern day zine — an email newsletter. It's a musical love letter to my past, present, and future self.",
+	  "type": "string"
+	},
+	{
+	  "field": "params.logo_url",
+	  "label": "URL for header logo",
+	  "placeholder": "https://endonend.micro.blog/uploads/2022/37f159d602.png",
+	  "type": "string"
+	},
+	{
+	  "field": "params.about_blurb",
+	  "label": "Text for About box",
+	  "placeholder": "One Last Wish is a modern day zine — an email newsletter. It’s a musical love letter to my past, present, and future self. Back in the 90s I was into making zines about the hardcore music scene. Today, email newsletters are filling that void. I’d love to do all that again, so here we are…",
+	"type": "string"
+	},
+	{
+	  "field": "params.about_more_url",
+	  "label": "Relative URL for page you want to link to in About box",
+	  "placeholder": "/about",
+	  "type": "string"
+	}
+  ]
 }

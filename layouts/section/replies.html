@@ -1,42 +1,53 @@
 {{ define "main" }}
-<div class="home h-feed">
 
-  <ul class="post-list">
+{{ partial "blog-header.html" . }}
+<main class="container">
+<h1 class="pb-2 mb-4 border-bottom">Latest Replies from Micro.blog</h1>
+
+<div class="row g-2" id="blogposts">
+	<div class="col-md-8">
+
+  <ul class="post-list-replies">
 	{{ if .Site.Params.paginate_replies }}
 		{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "reply") }}
 		{{ $list := $paginator.Pages }}
 		{{ range $list  }}
 		  <li class="h-entry">
 			{{ if .Title }}
-				<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+				<h1>{{ .Title }}</h1>
 			{{ end }}
 
-			<a href="{{ .Permalink }}" class="u-url"><span class="post-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time></span></a>
+			<p class="post-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>
 
-			<div class="e-content">
+			<div class="microblog_post">
 				{{ .Content }}
 			</div>
 		  </li>
 		{{ end }}
-    {{ else }}
+	{{ else }}
 		{{ $list := first 25 (where .Data.Pages.ByDate.Reverse "Type" "reply") }}
 		{{ range $list  }}
 		  <li class="h-entry">
 			{{ if .Title }}
-				<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+				<h1>{{ .Title }}</h1>
 			{{ end }}
 
-			<a href="{{ .Permalink }}" class="u-url"><span class="post-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time></span></a>
+			<p class="post-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>
 
-			<div class="e-content">
+			<div class="microblog_post">
 				{{ .Content }}
 			</div>
 		  </li>
 		{{ end }}
-    {{ end }}
+	{{ end }}
   </ul>
 
   <p class="rss-subscribe">subscribe <a href="{{ "feed.xml" | absURL }}">via RSS</a></p>
 
-</div>
+	</div>
+
+	{{ partial "sidebar.html" . }}
+
+</main>
+{{ partial "footer.html" . }}
 {{ end }}

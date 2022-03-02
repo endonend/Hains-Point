@@ -1,17 +1,25 @@
 {{ define "main" }}
 {{ partial "blog-header.html" . }}
 <main class="container">
+	<h1 class="pb-2 mb-4 border-bottom"><i class="bi-journal-text" role="img" aria-label="Recent Posts"></i> Archives</h1>
 	<div class="row g-2" id="blogposts">
 		<div class="col-md-8">
-			<article class="blog-post">
-				<h2 class="blog-post-title">{{ .Title }}</h2>
-				<p class="blog-post-meta mb-4 mt-2 text-muted"><a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a></p>
-			
-				{{ .Content }}
+				<article class="mb-4">
+				<ul>
+				{{ $list := (where .Site.Pages "Type" "post") }}
+				{{ range $list }}
+					{{ if .Title }}
+					<li>{{ .Date.Format "January 2, 2006" }}: <a href="{{ .RelPermalink }}" class="card-link">{{ .Title }}</a></li>
+					{{ else }}
+					<li>Aside posted on: <a href="{{ .RelPermalink }}" class="card-link"> {{ .Date.Format "January 2, 2006" }}</a></li>
+					{{ end }}
+				{{ end }}
+			</ul>
 			</article>
 		</div>
-	</div>
-	{{ partial "sidebar.html" . }}
+
+
+{{ partial "sidebar-home.html" . }}
 
 	</div>
 </main>

@@ -1,34 +1,96 @@
 .body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
+  .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+  }
 }
-  main.container {
-      margin-top: 4rem;
+main.container {
+    margin-top: 4rem;
+}
+article {
+    margin-right: 20px;
+}
+@media (max-width: 768px) {
+    article {
+    margin-right: 20px;
+    margin-left: 20px;
   }
-  article {
-      margin-right: 20px;
-  }
-  @media (max-width: 768px) {
-      article {
-      margin-right: 20px;
-      margin-left: 20px;
-    }
 }
 #asides .card-body img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 #blogposts h3 {
-    margin-right: 20px;
+  margin-right: 20px;
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+article iframe {
+  max-width: 100%;
+}
+
+blockquote {
+margin-bottom: 1rem;
+font-size: 1.25rem;
+border-left: 1px solid black;
+padding-left: 15px;
+}
+
+ul.post-list-replies {
+width: 90%;
+list-style-type: none;
+}
+
+/*
+  Microblog Comments
+*/
+
+.microblog_conversation {
+margin-top: 20px;
+padding-top: 10px;
+}
+
+.microblog_post {
+padding-top: 20px;
+padding-bottom: 20px;
+border-left: 1px solid lightgray;
+padding-left: 10px;
+margin-bottom: 20px;
+}
+
+.microblog_avatar {
+border-radius: 10px;
+vertical-align: top;
+}
+
+.microblog_fullname {
+font-weight: 500;
+}
+
+.microblog_time {
+font-size: 13px;
+padding-top: 10px;
+color: gray;
+}
+
+.microblog_time a {
+color: gray;
+text-decoration: none;
+}
+
+.microblog_text {
+padding-top: 10px;
 }

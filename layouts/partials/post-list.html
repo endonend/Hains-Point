@@ -1,34 +1,33 @@
 {{ partial "blog-header.html" . }}
 <main class="container">
-	<!-- Display if newsletter enabled -->
-	{{ with .Site.Params.enable_newsletter }}
 	<h3 class="pb-2 mb-4 border-bottom">
 		<i class="bi-bookmark-fill" role="img" aria-label="Latest Issues"></i> Latest Issues
 	</h3>
 	<div class="row mb-2">
-		{{ range first 2 (where .Site.Pages "Type" "in" site.Params.feature_category) }}
-			<div class="col-md-6">
-				<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-				  	<div class="col p-4 d-flex flex-column position-static">					  
-					  <strong class="d-inline-block mb-1 text-primary">{{ .Site.Params.enable_newsletter }}</strong>
-					  <h3 class="mb-0">{{ .Title }}</h3>
-					  <p class="blog-post-meta mb-2 mt-2 text-muted"><a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a></p>
-				  	  <div class="card-text mb-auto">
-					  		{{ .Summary }}
+	<div class="row row-cols-1 row-cols-md-2">
+	{{ range first 2 .Site.Taxonomies.categories.featured }}
+			<div class="col col-md-6">
+				<div class="row g-0 border rounded flex-md-row overflow-hidden mb-4 shadow-sm h-md-100 position-relative">
+					<div class="card border-dark h-100">
+						  <strong class="ps-3 py-2 border-bottom"><i class="bi-music-player" role="img" aria-label="Subscribe"></i> {{ .Site.Params.newsletter_name }}</strong>
+						  <div class="card-body">
+						<h3 class="card-title">{{ .Title }}</h3>
+						<a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="btn btn-warning mt-2">Read this issue</a>
+						</div>      
+						<div class="card-footer text-end">
+							<small class="text-muted">Posted on: {{ .Date.Format "January 2, 2006" }}</small>
 					  </div>
-					  {{ if .Truncated }}
-						<p><a href="{{ .RelPermalink }}" class="card-link mt-2">Read More</a></p>
-					  {{ end }}
-					</div>
 				</div>
 			</div>
+	</div>
 		{{ end }}
+</div>
 <!-- Feature if newsletter enabled -->
-	<div class="p-2 p-md-5 mb-4 text-white rounded bg-dark">
+	<div class="p-2 p-md-5 mb-2 text-white rounded bg-dark">
 		<div class="col-md-6 px-0">
 		  <h1 class="display-6 fst-italic"><i class="bi-send" role="img" aria-label="Subscribe"></i> Subscribe to {{ .Site.Params.newsletter_name }}</h1>
 		  <p class="my-3">{{ .Site.Params.subscribe_blurb }}</p>
-		  <form method="POST" action="https://micro.blog/users/subscribe/61826" class="row g-3">
+		  <form method="POST" action="https://micro.blog/users/subscribe/{{ .Site.Params.newsletter_id }}" class="row g-3">
 			  <div class="col-auto">
 				  <input type="text" name="email" size="30" placeholder="Your email address" class="form-control" /> 
 			  </div>
@@ -37,50 +36,35 @@
 			  </div>
 		  </form>
 		  </div>
-  	</div>
-	{{ end }}
+	  </div>
 <!-- End of display  if newsletter enabled -->
   <!-- Start of main blog posts with title - five -->
-	<div class="row g-2" id="blogposts">
-		<div class="col-md-8">
-			<h3 class="pb-2 mb-4 border-bottom"><i class="bi-journal-text" role="img" aria-label="Recent Posts"></i> From the Blog</h3>
-			
-			{{ if .Site.Params.paginate_home }}
-				{{ $paginator := .Paginate (where .Site.Pages "Type" "post") 5 }}
-				{{ range $paginator.Pages }}
-					
-					{{ .Summary }}
-					  
-					{{ if .Truncated }}
-						<p><a href="{{ .RelPermalink }}" class="card-link mt-2">Read More</a></p>
-					{{ end }}
+<div class="row g-2" id="blogposts">
+	<div class="col-md-8">
+		<h3 class="pb-2 mb-4 border-bottom"><i class="bi-journal-text" role="img" aria-label="Recent Posts"></i> From the Blog</h3>
+			{{ $paginator := .Paginate (where .Pages "Type" "post") 5 }}
+			{{ range $paginator.Pages }}
+					{{ partial "post-summary.html" . }}
 			{{ end }}
-		</div>
-	<nav class="blog-pagination" aria-label="Pagination">
-		{{ $pag := $.Paginator }}
-		{{ if or $pag.HasPrev $pag.HasNext }}
-			{{ if $pag.HasPrev }}
-				<a href="{{ $pag.Prev.URL }}" class="btn btn-outline-primary">&larr; Newer Posts</a>
+		
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="blog-pagination text-center" aria-label="Pagination">
+			{{ $pag := $.Paginator }}
+			{{ if or $pag.HasPrev $pag.HasNext }}
+				{{ if $pag.HasPrev }}
+					<a href="{{ $pag.Prev.URL }}" class="btn btn-outline-primary">← Newer Posts</a>
 				{{ end }}
-		<span class="page-number">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
-			{{ if $pag.HasNext }}
-				<a href="{{ $pag.Next.URL }}" class="btn btn-outline-primary">Older Posts &rarr;</a>
-			{{ end }}
-		{{ end }}
-	</nav>
-	{{ else }}
-		{{ $list := where .Site.Pages "Type" "post" }}
-			{{ range $list }}								
-				{{ .Summary }}
-				  
-				{{ if .Truncated }}
-					<p><a href="{{ .RelPermalink }}" class="card-link mt-2">Read More</a></p>
+			<span class="page-number px-2">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
+				{{ if $pag.HasNext }}
+					<a href="{{ $pag.Next.URL }}" class="btn btn-outline-primary">Older Posts →</a>
 				{{ end }}
 			{{ end }}
-	{{ end }}
-	</div>
-	{{ partial "sidebar.html" . }}
+		</nav>
+{{ end }}<!---->
 
 	</div>
+
+	{{ partial "sidebar-home.html" . }}
+
 </main>
 {{ partial "footer.html" . }}

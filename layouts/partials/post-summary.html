@@ -1,0 +1,29 @@
+<article class="mb-4">
+	
+	{{ if .Title }}
+	
+	<div class="card border-light px-2 py-2" style="width: 100%;">
+		  <div class="card-body">
+			<h3 class="card-title blog-post-title">{{ .Title }}</h3>
+			<p class="card-text"> {{ .Summary }}</p>
+			<a href="{{ .RelPermalink }}" class="card-link">Read More</a>
+		  </div>
+		<div class="card-footer text-end">
+			<small class="text-muted">Posted on: {{ .Date.Format "January 2, 2006" }}</small>
+		 </div>	
+	</div>
+	{{ else }}
+	<div class="card border-light px-2 py-2" style="width: 100%;">
+			    	<strong class="ps-3 small"><i class="bi-sticky" role="img" aria-label="Aside"></i> Aside</strong>
+				<div class="card-body lead">
+					{{ .Content }}
+				</div>
+				 <div class="card-footer text-end">
+							<small class="text-muted">Posted on: <a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a></small>
+				  </div>
+			</div>
+	{{ end }}
+	
+	</article>
+	
+	
