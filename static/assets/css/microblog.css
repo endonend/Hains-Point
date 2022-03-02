@@ -43,15 +43,41 @@ article iframe {
 }
 
 blockquote {
-margin-bottom: 1rem;
-font-size: 1.25rem;
-border-left: 1px solid black;
-padding-left: 15px;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  border-left: 1px solid black;
+  padding-left: 15px;
 }
 
 ul.post-list-replies {
-width: 90%;
-list-style-type: none;
+  width: 90%;
+  list-style-type: none;
+}
+
+.blockquote-footer {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: .75em;
+  color: #6c757d;
+  display: block;
+}
+.image-footer {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: .75em;
+  color: #6c757d;
+  display: block;
+}
+hr {
+  width:100px; 
+  margin: 20px 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+pre {
+  border-left: 1px solid darkorange;
+  padding-left: 15px;
+  margin-top: 1rem;
 }
 
 /*

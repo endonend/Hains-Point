@@ -42,19 +42,28 @@ These are all tested and confirmed by me. Others may work, though!
 
 Note: I am working on support for the Photos plugin and Photos page. (as of 3/1/22)
 
+### Note on Upgrading
+
+After installing via plug-in, you will be prompted for upgrades in the future as I make changes to the theme. Please note, when you upgrade (as of 3/2/22), **your settings will not be saved**, so please document these settings prior to upgrading until this is fixed. You will need to go into Settings and re-enter your settings after each upgrade.
+
 ## Donations
 
 If you use the theme (and like it) you can [donate to support its development](https://www.buymeacoffee.com/jdettbarn). Thanks in advance!
 
 ## Version History
 
-2022.1 - February 23, 2022
+**2022.1 - February 23, 2022**
 
 - Initial release
 
-2022.1.1 - March 1, 2022
+**2022.1.1 - March 1, 2022**
 
 - Quick Fix - changed Flickr to Twitter, poor copy + paste!
+
+**2022.1.2 - March 2, 2022**
+
+- Added upgrade note to Readme (save your settings prior to upgrading!)
+- Added some CSS for blockquote captions (wrap your blockquote captions/citations and add the class .blockquote-footer), pre styling, horizontal rule styling, and image captions (wrap your image captions and add the class .image-footer)
 
 
 Base theme files forked from [Cypress for Micro.blog](https://github.com/cdevroe/cypress-microblog) by Colin Devroe -- to learn Hugo templating. 
