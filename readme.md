@@ -7,8 +7,9 @@ Written for [Micro.blog](https://micro.blog) by [Jason Dettbarn](http://endonend
 [My site](https://endonend.micro.blog) currently uses this theme, if you'd like to see it in action.
 
 ## How to install
-
 Hain's Point for Micro.blog is freely available to members of Micro.blog. Log into your account, choose Plugins in your settings, click on Find Plug-ins, and choose to install Hain's Point as your theme.
+
+Note: This theme was built and tested with Hugo 0.54. Make sure that is set on your Micro.blog Design settings page. If you installed via plug-in, the Custom Theme on that page should be set to None.
 
 Once installed, visit the theme's Settings screen to customize for your site. Settings available:
 
