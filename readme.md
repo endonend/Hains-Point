@@ -70,4 +70,10 @@ If you use the theme (and like it) you can [donate to support its development](h
 
 - Fixed an issue with empty Featured and Asides categories causing build errors.
 
+**2022.1.4 - March 3, 2022**
+
+- Fixed an issue with the Page template. Sidebar and header now show properly.
+
+---
+
 Base theme files forked from [Cypress for Micro.blog](https://github.com/cdevroe/cypress-microblog) by Colin Devroe -- to learn Hugo templating. 
