@@ -9,7 +9,7 @@ Written for [Micro.blog](https://micro.blog) by [Jason Dettbarn](http://endonend
 ## How to install
 Hain's Point for Micro.blog is freely available to members of Micro.blog. Log into your account, choose Plugins in your settings, click on Find Plug-ins, and choose to install Hain's Point as your theme.
 
-Note: This theme was built and tested with Hugo 0.54. Make sure that is set on your Micro.blog Design settings page. If you installed via plug-in, the Custom Theme on that page should be set to None.
+Note: This theme was built and tested with **Hugo 0.54**. Make sure that is set on your Micro.blog Design settings page. If you installed via plug-in, the Custom Theme on that page should be set to None.
 
 Once installed, visit the theme's Settings screen to customize for your site. Settings available:
 
@@ -66,5 +66,8 @@ If you use the theme (and like it) you can [donate to support its development](h
 - Added upgrade note to Readme (save your settings prior to upgrading!)
 - Added some CSS for blockquote captions (wrap your blockquote captions/citations and add the class .blockquote-footer), pre styling, horizontal rule styling, and image captions (wrap your image captions and add the class .image-footer)
 
+**2022.1.3 - March 2, 2022**
+
+- Fixed an issue with empty Featured and Asides categories causing build errors.
 
 Base theme files forked from [Cypress for Micro.blog](https://github.com/cdevroe/cypress-microblog) by Colin Devroe -- to learn Hugo templating. 
