@@ -18,6 +18,8 @@ Once installed, visit the theme's Settings screen to customize for your site. Se
 - Set Micro.blog newsletter ID (see the tips section below)
 - Set the "about" blurb on the sidebar and About page URL
 - Set header logo (see the tips section below)
+- Customize the "Latest Issues" text above your two featured posts
+- Customize the icon next to your newsletter/featured category (default is currently 'music-player') above your two featured posts. For the icon, use the icon name from [Bootstrap Icons](https://icons.getbootstrap.com)
 
 Also, you will need to create the following categories:
 
@@ -73,6 +75,10 @@ If you use the theme (and like it) you can [donate to support its development](h
 **2022.1.4 - March 3, 2022**
 
 - Fixed an issue with the Page template. Sidebar and header now show properly.
+
+**2022.1.5 - March 3, 2022**
+
+- **New!** Customize the "Latest Issues" text and the icon next to your newsletter/featured category (default is currently 'music-player') above your two featured posts. For the icon, use the icon name from [Bootstrap Icons](https://icons.getbootstrap.com)
 
 ---
 

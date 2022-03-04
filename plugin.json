@@ -1,5 +1,5 @@
 {
-	"version": "2022.1.4",
+	"version": "2022.1.5",
 	"title": "Hain's Point theme",
 	"description": "Changes your Micro.blog powered site to use the Hain's Point theme.",
 	"fields": [
@@ -25,6 +25,18 @@
 	  "field": "params.newsletter_name",
 	  "label": "Newsletter name",
 	  "placeholder": "One Last Wish",
+	  "type": "string"
+	},
+	{
+	  "field": "params.featured_text",
+	  "label": "Customize the text above your featured posts area.",
+	  "placeholder": "Latest Issues",
+	  "type": "string"
+	},
+	{
+	  "field": "params.featured_icon",
+	  "label": "Customize the icon next to your newsletter name above the featured post block. Use the icon name from Bootstrap icons.",
+	  "placeholder": "music-player",
 	  "type": "string"
 	},
 	{

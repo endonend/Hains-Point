@@ -1,7 +1,7 @@
 {{ partial "blog-header.html" . }}
 <main class="container">
 	<h3 class="pb-2 mb-4 border-bottom">
-		<i class="bi-bookmark-fill" role="img" aria-label="Latest Issues"></i> Latest Issues
+		<i class="bi-bookmark-fill" role="img" aria-label="Latest Issues"></i> {{ .Site.Params.featured_text }}
 	</h3>
 	<div class="row mb-2">
 	<div class="row row-cols-1 row-cols-md-2">
@@ -10,7 +10,7 @@
 			<div class="col col-md-6">
 				<div class="row g-0 border rounded flex-md-row overflow-hidden mb-4 shadow-sm h-md-100 position-relative">
 					<div class="card border-dark h-100">
-						  <strong class="ps-3 py-2 border-bottom"><i class="bi-music-player" role="img" aria-label="Subscribe"></i> {{ .Site.Params.newsletter_name }}</strong>
+						  <strong class="ps-3 py-2 border-bottom"><i class="bi-{{ .Site.Params.featured_icon }}" role="img" aria-label="Featured Post"></i> {{ .Site.Params.newsletter_name }}</strong>
 						  <div class="card-body">
 						<h3 class="card-title">{{ .Title }}</h3>
 						<a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="btn btn-warning mt-2">Read this issue</a>
