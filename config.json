@@ -3,6 +3,16 @@
 		"paginate_home": true,
 		"paginate_categories": true,
 		"paginate_replies": false,
-		"include_conversation": true
+		"include_conversation": true,
+		"header_bg": "bg-dark",
+		"subscribe_bg": "bg-dark",
+		"subscribe_color": "text-white",
+		"subscribe_btnbg": "bg-warning",
+		"subscribe_btncolor": "text-dark",
+		"about_bg": "bg-warning",
+		"about_color": "text-dark",
+		"about_btnbg": "bg-dark",
+		"about_btncolor": "text-white",
+		"footer_color": "text-white"
 	}
 }

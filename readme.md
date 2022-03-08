@@ -20,6 +20,7 @@ Once installed, visit the theme's Settings screen to customize for your site. Se
 - Set header logo (see the tips section below)
 - Customize the "Latest Issues" text above your two featured posts
 - Customize the icon next to your newsletter/featured category (default is currently 'music-player') above your two featured posts. For the icon, use the icon name from [Bootstrap Icons](https://icons.getbootstrap.com)
+- Customize the header/footer background color; subscribe box, about box - backgrounds, buttons, and text! Bootstrap values can be found here: [Text Colors](https://getbootstrap.com/docs/5.1/utilities/colors/), [Button Colors](https://getbootstrap.com/docs/5.1/components/buttons/), [Background Colors](https://getbootstrap.com/docs/5.1/utilities/background/#background-color)
 
 Also, you will need to create the following categories:
 
@@ -44,6 +45,8 @@ Hain's Point currently supports these plugins:
 These are all tested and confirmed by me. Others may work, though!
 
 Note: I am working on support for the Photos plugin and Photos page. (as of 3/1/22)
+
+Note on Plausible Analytics: the theme supports Goals, specifically the Newsletter subscription form. In Plausible, simply add a Goal > Custom Event named "Newsletter" to your site and the Newsletter subscription form submissions will be tracked.
 
 ### Note on Upgrading
 
@@ -79,6 +82,14 @@ If you use the theme (and like it) you can [donate to support its development](h
 **2022.1.5 - March 3, 2022**
 
 - **New!** Customize the "Latest Issues" text and the icon next to your newsletter/featured category (default is currently 'music-player') above your two featured posts. For the icon, use the icon name from [Bootstrap Icons](https://icons.getbootstrap.com)
+
+**2022.1.6 - March 3, 2022**
+
+- **New!** Added support for Plausible Analytics form custom event tracking - specifically for the Newsletter form
+
+**2022.1.7 - March 8, 2022**
+
+- **New!** Added support for color customization: header/footer background color; subscribe box, about box - backgrounds, buttons, and text!
 
 ---
 

@@ -1,5 +1,5 @@
 {
-	"version": "2022.1.5",
+	"version": "2022.1.7",
 	"title": "Hain's Point theme",
 	"description": "Changes your Micro.blog powered site to use the Hain's Point theme.",
 	"fields": [
@@ -68,6 +68,66 @@
 	  "label": "Relative URL for page you want to link to in About box",
 	  "placeholder": "/about",
 	  "type": "string"
-	}
+	},
+	{
+	  "field": "params.header_bg",
+	  "label": "Background color for header and footer",
+	  "placeholder": "bg-dark",
+	  "type": "string"
+	},
+	{
+	  "field": "params.subscribe_bg",
+	  "label": "Background color for wide subscribe box",
+	  "placeholder": "bg-dark",
+	  "type": "string"
+	},
+	{
+	  "field": "params.subscribe_color",
+	  "label": "Text color for header and footer",
+	  "placeholder": "text-white",
+	  "type": "string"
+	},
+	{
+	  "field": "params.subscribe_btnbg",
+	  "label": "Background color for wide subscribe box button",
+	  "placeholder": "bg-warning",
+	  "type": "string"
+	},
+	{
+	  "field": "params.subscribe_btncolor",
+	  "label": "Text color for wide subscribe box button",
+	  "placeholder": "text-dark",
+	  "type": "string"
+	},
+	{
+	  "field": "params.about_bg",
+	  "label": "Background color for About box",
+	  "placeholder": "bg-warning",
+	  "type": "string"
+	},
+	{
+	  "field": "params.about_color",
+	  "label": "Text color for About box",
+	  "placeholder": "text-dark",
+	  "type": "string"
+	},
+	{
+	  "field": "params.about_btnbg",
+	  "label": "Background color for About box button",
+	  "placeholder": "bg-dark",
+	  "type": "string"
+	},
+	{
+	  "field": "params.about_btncolor",
+	  "label": "Text color for About box button",
+	  "placeholder": "text-white",
+	  "type": "string"
+	},
+	{
+	  "field": "params.footer_color",
+	  "label": "Text color for footer",
+	  "placeholder": "text-white",
+	  "type": "string"
+	}	
   ]
 }

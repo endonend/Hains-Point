@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <div class="col-md-4">
   <div class="position-sticky" style="top: 3rem;">
-    <div class="p-4 mb-3 bg-warning bg-gradient rounded">
+    <div class="p-4 mb-3 bg-gradient {{ .Site.Params.about_color }} {{ .Site.Params.about_bg }} rounded">
       {{ with .Site.Params.about_blurb }}
       <h4><i class="bi-megaphone-fill" role="img" aria-label="About this Site"></i> About</h4>
       <p class="mb-1">{{ . }}</p>
@@ -12,15 +12,9 @@
       <h5 class="fst-italic">Subscribe to the newsletter</h5>
       <form method="POST" action="https://micro.blog/users/subscribe/{{ .Site.Params.newsletter_id }}" class="row g-3">
             <input type="text" class="form-control" name="email" size="30" placeholder="Your email address" /> 
-            <input type="submit" class="btn btn-dark" value="Subscribe" />
-      </form>
-      <p class="pt-2"><strong>Elsewhere:</strong> <a href="{{ .RSSLink }}"><i class="bi-rss-fill" role="img" aria-label="RSS"></i> RSS</a>,
-      {{ with .Site.Params.twitter_username }} 
-      <a href="https://twitter.com/{{ . }}"><i class="bi-twitter" role="img" aria-label="Twitter"></i> Twitter</a>,
-      {{ end }} 
-      {{ with .Site.Params.instagram_username }}
-      <a href="https://instagram.com/{{ . }}"><i class="bi-instagram" role="img" aria-label="Instagram"></i> Instagram</a>  
-      {{ end }}
+            <button type="submit" data-analytics='"Newsletter"' class="btn {{ .Site.Params.subscribe_btnbg }} {{ .Site.Params.subscribe_btncolor }}" value="Subscribe" />Subscribe</button>
+            </form>
+            <p class="pt-2"><strong>Elsewhere:</strong> <a href="{{ .RSSLink }}"><i class="bi-rss-fill" role="img" aria-label="RSS"></i> RSS</a>{{ with .Site.Params.twitter_username }}, <a href="https://twitter.com/{{ . }}"><i class="bi-twitter" role="img" aria-label="Twitter"></i> Twitter</a>{{ end }}{{ with .Site.Params.instagram_username }}, <a href="https://instagram.com/{{ . }}"><i class="bi-instagram" role="img" aria-label="Instagram"></i> Instagram</a>{{ end }}
       </p>	        
     </div>
 <!-- Asides section -->

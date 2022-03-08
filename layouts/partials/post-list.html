@@ -13,7 +13,7 @@
 						  <strong class="ps-3 py-2 border-bottom"><i class="bi-{{ .Site.Params.featured_icon }}" role="img" aria-label="Featured Post"></i> {{ .Site.Params.newsletter_name }}</strong>
 						  <div class="card-body">
 						<h3 class="card-title">{{ .Title }}</h3>
-						<a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="btn btn-warning mt-2">Read this issue</a>
+						<a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="btn {{ .Site.Params.subscribe_btnbg }} {{ .Site.Params.subscribe_btncolor }} mt-2">Read this issue</a>
 						</div>      
 						<div class="card-footer text-end">
 							<small class="text-muted">Posted on: {{ .Date.Format "January 2, 2006" }}</small>
@@ -25,7 +25,7 @@
 	{{ end }}
 </div>
 <!-- Feature if newsletter enabled -->
-	<div class="p-2 p-md-5 mb-2 text-white rounded bg-dark">
+	<div class="p-2 p-md-5 mb-2 {{ .Site.Params.subscribe_color }} rounded {{ .Site.Params.subscribe_bg }}">
 		<div class="col-md-6 px-0">
 		  <h1 class="display-6 fst-italic"><i class="bi-send" role="img" aria-label="Subscribe"></i> Subscribe to {{ .Site.Params.newsletter_name }}</h1>
 		  <p class="my-3">{{ .Site.Params.subscribe_blurb }}</p>
@@ -34,7 +34,7 @@
 				  <input type="text" name="email" size="30" placeholder="Your email address" class="form-control" /> 
 			  </div>
 			  <div class="col-auto">
-				  <input type="submit" class="btn bg-warning text-dark mb-3" value="Subscribe" />
+				  <button type="submit" data-analytics='"Newsletter"' class="btn {{ .Site.Params.subscribe_btnbg }} {{ .Site.Params.subscribe_btncolor }} mb-3" value="Subscribe" />Subscribe</button>
 			  </div>
 		  </form>
 		  </div>

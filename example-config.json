@@ -17,6 +17,16 @@
 		"about_blurb": "One Last Wish is a modern day zine — an email newsletter. It’s a musical love letter to my past, present, and future self. Back in the 90s I was into making zines about the hardcore music scene. Today, email newsletters are filling that void. I’d love to do all that again, so here we are…",
 		"about_more_url": "/about",
 		"featured_icon": "music-player",
-		"featured_text": "Latest Issues"
+		"featured_text": "Latest Issues",
+		"header_bg": "bg-dark",
+		"subscribe_bg": "bg-dark",
+		"subscribe_color": "text-white",
+		"subscribe_btnbg": "bg-warning",
+		"subscribe_btncolor": "text-dark",
+		"about_bg": "bg-warning",
+		"about_color": "text-dark",
+		"about_btnbg": "bg-success",
+		"about_btncolor": "text-white",
+		"footer_color": "text-white"
 	}
 }
