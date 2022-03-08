@@ -27,6 +27,7 @@
 		"about_color": "text-dark",
 		"about_btnbg": "bg-success",
 		"about_btncolor": "text-white",
-		"footer_color": "text-white"
+		"footer_color": "text-white",
+		"rbe_plugin": true
 	}
 }

@@ -23,8 +23,11 @@
 						<small class="text-muted">Posted on: <a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a> {{- with .Params.categories -}}  <br>  In categories:  {{- range . }} <a class="article-category-link pe-1" href="{{ "categories" | relLangURL }}/{{ . | urlize }}/"> {{ . }} </a> {{- end }} {{- end }} </small>
 	 </div>
 </div>
+{{ if .Site.Params.rbe_plugin }}
+<p>{{ partial "reply-by-email.html" . }}</p>
+{{ end }}
 {{ if .Site.Params.include_conversation }}
-<h4 class="mt-4 pb-2 border-bottom small"><i class="bi-chat-right-dots" role="img" aria-label="Comments"></i>  Comments</h4>
+<h5 class="mt-4 pb-2 border-bottom small"><i class="bi-chat-right-dots" role="img" aria-label="Comments"></i>  Comments</h5>
   <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
 {{ partial "conversation-link.html" . }}
 {{ end }}
