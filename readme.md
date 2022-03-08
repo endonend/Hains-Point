@@ -3,7 +3,7 @@
 A customizable newsletter-focused theme for Micro.blog. Includes featured posts, asides, and more!
 
 <div style="width:60%">
-![Homepage](/repository/images/hains-point-1.jpg?raw=true)
+![Homepage](https://raw.githubusercontent.com/endonend/Hains-Point/main/images/hains-point-1.jpg)
 </div>
 
 Written for [Micro.blog](https://micro.blog) by [Jason Dettbarn](http://endonend.org) [@endonend](https://micro.blog/endonend).
@@ -11,8 +11,8 @@ Written for [Micro.blog](https://micro.blog) by [Jason Dettbarn](http://endonend
 [My site](https://endonend.micro.blog) currently uses this theme, if you'd like to see it in action.
 
 <div style="width:60%">
-![Homepage pt 2](/repository/images/hains-point-2.jpg?raw=true)
-![Single page](/repository/images/hains-point-3.jpg?raw=true)
+![Homepage pt 2](https://raw.githubusercontent.com/endonend/Hains-Point/main/images/hains-point-2.jpg)
+![Single page](https://raw.githubusercontent.com/endonend/Hains-Point/main/images/hains-point-3.jpg)
 </div>
 ## How to install
 Hain's Point for Micro.blog is freely available to members of Micro.blog. Log into your account, choose Plugins in your settings, click on Find Plug-ins, and choose to install Hain's Point as your theme.
