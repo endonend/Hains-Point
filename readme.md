@@ -2,10 +2,18 @@
 
 A customizable newsletter-focused theme for Micro.blog. Includes featured posts, asides, and more!
 
+<div style="width:60%">
+![Homepage](images/hains-point-1.jpg?raw=true)
+</div>
+
 Written for [Micro.blog](https://micro.blog) by [Jason Dettbarn](http://endonend.org) [@endonend](https://micro.blog/endonend).
 
 [My site](https://endonend.micro.blog) currently uses this theme, if you'd like to see it in action.
 
+<div style="width:60%">
+![Homepage pt 2](images/hains-point-2.jpg?raw=true)
+![Single page](images/hains-point-3.jpg?raw=true)
+</div>
 ## How to install
 Hain's Point for Micro.blog is freely available to members of Micro.blog. Log into your account, choose Plugins in your settings, click on Find Plug-ins, and choose to install Hain's Point as your theme.
 
@@ -27,6 +35,8 @@ Also, you will need to create the following categories:
 - Featured (the two latest posts in this category show above the subscribe box on the homepage)
 - Asides (the posts in this category get an Aside tag and show in the sidebar in post pages)
 
+
+
 ### Theme Install Tips
 
 - Get your newsletter ID on the Subscribe page created when you enable Newsletters for your micro.blog account. The ID is in the form action URL it adds to that page. In this example the ID is 61826: https://micro.blog/users/subscribe/61826
@@ -41,6 +51,7 @@ Hain's Point currently supports these plugins:
 - [Plausible Analytics](https://github.com/LukasRos/plugin-plausible)
 - [Open Graph Cards](https://github.com/thatguygriff/plugin-open-graph)
 - [Twitter cards](https://github.com/microdotblog/plugin-twitter-cards)
+- [Reply by Email](https://github.com/svendahlstrand/plugin-reply-by-email) - need to enable in Hain's Point settings as well.
 
 These are all tested and confirmed by me. Others may work, though!
 
@@ -90,6 +101,10 @@ If you use the theme (and like it) you can [donate to support its development](h
 **2022.1.7 - March 8, 2022**
 
 - **New!** Added support for color customization: header/footer background color; subscribe box, about box - backgrounds, buttons, and text!
+
+**2022.1.8 - March 8, 2022**
+
+- **New!** Added support for the Reply by Email plugin. Install the plugin, set it up, then make sure to turn it on in the Hain's Point settings.
 
 ---
 
