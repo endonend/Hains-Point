@@ -12,11 +12,11 @@
 					<div class="card border-dark h-100">
 						  <strong class="ps-3 py-2 border-bottom"><i class="bi-{{ .Site.Params.featured_icon }}" role="img" aria-label="Featured Post"></i> {{ .Site.Params.newsletter_name }}</strong>
 						  <div class="card-body">
-						<h3 class="card-title">{{ .Title }}</h3>
-						<a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="btn {{ .Site.Params.subscribe_btnbg }} {{ .Site.Params.subscribe_btncolor }} mt-2">Read this issue</a>
+						<h3 class="card-title p-name">{{ .Title }}</h3>
+						<a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="btn {{ .Site.Params.subscribe_btnbg }} {{ .Site.Params.subscribe_btncolor }} mt-2 u-url">Read this issue</a>
 						</div>      
 						<div class="card-footer text-end">
-							<small class="text-muted">Posted on: {{ .Date.Format "January 2, 2006" }}</small>
+							<small class="text-muted dt-published">Posted on: {{ .Date.Format "January 2, 2006" }}</small>
 					  </div>
 				</div>
 			</div>
@@ -34,7 +34,11 @@
 				  <input type="text" name="email" size="30" placeholder="Your email address" class="form-control" /> 
 			  </div>
 			  <div class="col-auto">
-				  <button type="submit" data-analytics='"Newsletter"' class="btn {{ .Site.Params.subscribe_btnbg }} {{ .Site.Params.subscribe_btncolor }} mb-3" value="Subscribe" />Subscribe</button>
+				  {{ if .Site.Params.plausible_button }}
+				  	<button type="submit" data-analytics='"Newsletter"' class="btn {{ .Site.Params.subscribe_btnbg }} {{ .Site.Params.subscribe_btncolor }} mb-3" value="Subscribe" />Subscribe</button>
+				  {{ else }}
+					<button type="submit" class="btn {{ .Site.Params.subscribe_btnbg }} {{ .Site.Params.subscribe_btncolor }} mb-3" value="Subscribe" />Subscribe</button>
+				  {{ end }}
 			  </div>
 		  </form>
 		  </div>

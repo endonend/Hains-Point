@@ -50,6 +50,7 @@ Hain's Point currently supports these plugins:
 - [Open Graph Cards](https://github.com/thatguygriff/plugin-open-graph)
 - [Twitter cards](https://github.com/microdotblog/plugin-twitter-cards)
 - [Reply by Email](https://github.com/svendahlstrand/plugin-reply-by-email) - need to enable in Hain's Point settings as well.
+- [Micromemories / On this Day](https://github.com/cleverdevil/micromemories)
 
 These are all tested and confirmed by me. Others may work, though!
 
@@ -103,6 +104,11 @@ If you use the theme (and like it) you can [donate to support its development](h
 **2022.1.8 - March 8, 2022**
 
 - **New!** Added support for the Reply by Email plugin. Install the plugin, set it up, then make sure to turn it on in the Hain's Point settings.
+
+**2022.1.9 - March 9, 2022**
+
+- **New!** Added support for [On this Day](https://github.com/cleverdevil/micromemories) by adding microformats to the single post page.
+- **New!** Added a toggle for Plausible Analytics form tracking to the Settings. See note above on setting it up, if you want to toggle this on. (Should be off by default, since some browsers block this tracking.)
 
 ---
 

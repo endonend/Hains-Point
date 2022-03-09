@@ -12,7 +12,11 @@
       <h5 class="fst-italic">Subscribe to the newsletter</h5>
       <form method="POST" action="https://micro.blog/users/subscribe/{{ .Site.Params.newsletter_id }}" class="row g-3">
             <input type="text" class="form-control" name="email" size="30" placeholder="Your email address" /> 
-            <button type="submit" data-analytics='"Newsletter"' class="btn {{ .Site.Params.subscribe_btnbg }} {{ .Site.Params.subscribe_btncolor }}" value="Subscribe" />Subscribe</button>
+            {{ if .Site.Params.plausible_button }}
+              <button type="submit" data-analytics='"Newsletter"' class="btn {{ .Site.Params.about_btnbg }} {{ .Site.Params.about_btncolor }}" value="Subscribe" />Subscribe</button>
+            {{ else }}
+              <button type="submit" class="btn {{ .Site.Params.about_btnbg }} {{ .Site.Params.about_btncolor }}" value="Subscribe" />Subscribe</button>
+            {{ end }}
             </form>
             <p class="pt-2"><strong>Elsewhere:</strong> <a href="{{ .RSSLink }}"><i class="bi-rss-fill" role="img" aria-label="RSS"></i> RSS</a>{{ with .Site.Params.twitter_username }}, <a href="https://twitter.com/{{ . }}"><i class="bi-twitter" role="img" aria-label="Twitter"></i> Twitter</a>{{ end }}{{ with .Site.Params.instagram_username }}, <a href="https://instagram.com/{{ . }}"><i class="bi-instagram" role="img" aria-label="Instagram"></i> Instagram</a>{{ end }}
       </p>	        

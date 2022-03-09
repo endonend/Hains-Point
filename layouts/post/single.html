@@ -4,15 +4,15 @@
 <main class="container">
 <div class="row g-2" id="blogposts">
 	<div class="col-md-8">
-			<article class="mb-2">
+			<article class="mb-2 h-entry">
 <div class="card border-light px-2 py-2">
 {{ if .Title }}
-		<h1 class="card-title blog-post-title">{{ .Title }}</h1>
+		<h1 class="card-title blog-post-title p-name">{{ .Title }}</h1>
 
 				 {{ .Content }}
 {{ else }}
 	<h4 class="pb-2 my-4 border-bottom small"><i class="bi-sticky-fill" role="img" aria-label="Quick Posts"></i> An Aside</h4>
-	<div class="my-4 py-4 px-4 fs-4">
+	<div class="my-4 py-4 px-4 fs-4 e-content">
 	
 			{{ .Content }}
 	</div>
@@ -20,14 +20,14 @@
 {{ end }}
 
 	<div class="card-footer">
-						<small class="text-muted">Posted on: <a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a> {{- with .Params.categories -}}  <br>  In categories:  {{- range . }} <a class="article-category-link pe-1" href="{{ "categories" | relLangURL }}/{{ . | urlize }}/"> {{ . }} </a> {{- end }} {{- end }} </small>
+						<small class="text-muted">Posted on: <a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published u-url">{{ .Date.Format "January 2, 2006" }}</a> {{- with .Params.categories -}}  <br>  In categories:  {{- range . }} <a class="article-category-link pe-1" href="{{ "categories" | relLangURL }}/{{ . | urlize }}/"> {{ . }} </a> {{- end }} {{- end }} </small>
 	 </div>
 </div>
 {{ if .Site.Params.rbe_plugin }}
 <p>{{ partial "reply-by-email.html" . }}</p>
 {{ end }}
 {{ if .Site.Params.include_conversation }}
-<h5 class="mt-4 pb-2 border-bottom small"><i class="bi-chat-right-dots" role="img" aria-label="Comments"></i>  Comments</h5>
+<h5 class="mt-4 pb-2 border-bottom"><i class="bi-chat-right-dots" role="img" aria-label="Comments"></i>  Comments</h5>
   <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
 {{ partial "conversation-link.html" . }}
 {{ end }}

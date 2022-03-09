@@ -1,3 +1,4 @@
 .nova
 .nova/
 .nova/*
+.DS_Store

@@ -10,7 +10,7 @@
 				 {{ .Content }}
 
 	<div class="card-footer">
-						<small class="text-muted">Posted on: <a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a></small>
+						<small class="text-muted">Last modified on: <a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Lastmod.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Lastmod.Format "January 2, 2006" }}</a></small>
 	 </div>
 </div>
 			</article>

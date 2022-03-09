@@ -1,5 +1,5 @@
 {
-	"version": "2022.1.8",
+	"version": "2022.1.9",
 	"title": "Hain's Point theme",
 	"description": "Changes your Micro.blog powered site to use the Hain's Point theme.",
 	"fields": [
@@ -83,7 +83,7 @@
 	},
 	{
 	  "field": "params.subscribe_color",
-	  "label": "Text color for header and footer",
+	  "label": "Text color for wide subscribe box",
 	  "placeholder": "text-white",
 	  "type": "string"
 	},
@@ -128,10 +128,15 @@
 	  "label": "Text color for footer",
 	  "placeholder": "text-white",
 	  "type": "string"
-	}	,
+	},
 	{
 	  "field": "params.rbe_plugin",
 	  "label": "Is the Reply By Email plugin installed?",
+	  "type": "boolean"
+	},
+	{
+	  "field": "params.plausible_button",
+	  "label": "Enable Plausible Analytics button tracking?",
 	  "type": "boolean"
 	}
   ]
